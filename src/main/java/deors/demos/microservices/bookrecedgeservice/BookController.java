@@ -6,24 +6,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+@RestController
 public class BookController {
 
-    @RestController
-    class QuoteController {
-        @Autowired
-        RestTemplate restTemplate;
+    @Autowired
+    RestTemplate restTemplate;
 
-        @Value("${defaultBook}")
-        private String defaultBook;
+    @Value("${defaultBook}")
+    private String defaultBook;
 
-        @RequestMapping("/bookrecedge")
-        @com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand(fallbackMethod = "getDefaultBook")
-        public String getBookRecommendation() {
-            return restTemplate.getForObject("http://bookrec-service/bookrec", String.class);
-        }
+    @RequestMapping("/bookrecedge")
+    @com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand(fallbackMethod = "getDefaultBook")
+    public String getBookRecommendation() {
+        return restTemplate.getForObject("http://bookrec-service/bookrec", String.class);
+    }
 
-        public String getDefaultBook() {
-            return defaultBook;
-        }
+    public String getDefaultBook() {
+        return defaultBook;
     }
 }
