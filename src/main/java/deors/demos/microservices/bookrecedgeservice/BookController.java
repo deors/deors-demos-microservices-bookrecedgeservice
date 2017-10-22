@@ -18,7 +18,7 @@ public class BookController {
     @RequestMapping("/bookrecedge")
     @com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand(fallbackMethod = "getDefaultBook")
     public String getBookRecommendation() {
-        return restTemplate.getForObject("http://bookrec-service/bookrec", String.class);
+        return restTemplate.getForObject("http://bookrecservice/bookrec", String.class);
     }
 
     public String getDefaultBook() {
