@@ -10,9 +10,9 @@ import org.springframework.web.client.RestTemplate;
 @org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker
 public class BookrecedgeserviceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BookrecedgeserviceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BookrecedgeserviceApplication.class, args);
+    }
 
     @Bean
     @org.springframework.cloud.client.loadbalancer.LoadBalanced
