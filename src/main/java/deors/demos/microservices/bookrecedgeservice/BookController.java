@@ -12,7 +12,7 @@ public class BookController {
     @Autowired
     RestTemplate restTemplate;
 
-    @Value("${defaultBook}")
+    @Value("${defaultBook:no-default-book}")
     private String defaultBook;
 
     @RequestMapping("/bookrecedge")
