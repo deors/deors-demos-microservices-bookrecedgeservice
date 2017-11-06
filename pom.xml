@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>deors.demos.microservices.bookrecedgeservice</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Book recommendation edge service leveraging Spring Cloud and Netflix libraries</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
